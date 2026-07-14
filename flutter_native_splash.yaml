@@ -1,0 +1,23 @@
+flutter_native_splash:
+  
+  #======================================================================
+
+  #! FOR ALL PLATFORM, except Android 12+:
+
+  # general color for all platform (except android 12+):
+  # see there only 2 lines in all parameters that marked as [required], so others
+  # remain optional. NOTE that if you specify the [required] color, then you cant 
+  # use the [required] background_image in the next section. the reverse is true.
+  # select one, they cant work together.
+  color: "#ffffff"  ##====================================[REQUIRED]==========
+
+  image: assets/images/frame.png
+  handling concept. visit https://developer.android.com/guide/topics/ui/splash-screen
+  
+  #! ANDROID 12+ configuration:
+  android_12:
+    # background color
+    color: "#ffffff"
+    image: assets/images/frame.png
+
+    
