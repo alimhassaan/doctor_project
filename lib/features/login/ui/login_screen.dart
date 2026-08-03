@@ -1,12 +1,14 @@
 import 'package:doctor_app/core/helpers/spacing.dart';
 import 'package:doctor_app/core/theming/styles.dart';
-import 'package:doctor_app/core/widgets/app_text_form_field.dart';
+import 'package:doctor_app/features/login/data/models/login_request_body.dart';
+import 'package:doctor_app/features/login/logic/cubit/login_cubit.dart';
 import 'package:doctor_app/features/login/ui/widgets/already_have_account_text.dart';
 import 'package:doctor_app/features/login/ui/widgets/app_text_buttom.dart';
 import 'package:doctor_app/features/login/ui/widgets/email_and_password.dart';
 import 'package:doctor_app/features/login/ui/widgets/terms_and_conditions_text.dart';
 
 import 'package:flutter/material.dart';
+import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 
 class LoginScreen extends StatefulWidget {
@@ -37,7 +39,7 @@ class _LoginScreenState extends State<LoginScreen> {
                 Column(
                   children: [
                     EmailAndPassword(),
-
+                    verticalSpace(24),
                     Align(
                       alignment: AlignmentDirectional.centerEnd,
                       child: Text(
@@ -49,7 +51,9 @@ class _LoginScreenState extends State<LoginScreen> {
                     AppTextButton(
                       buttonText: 'Login',
                       textStyle: TextStyles.font16WhiteSemiBold,
-                      onPressed: () {},
+                      onPressed: () {
+                        validateThenDoLogin();
+                      },
                     ),
                     verticalSpace(16),
                     TermsAndConditionsText(),
@@ -63,5 +67,16 @@ class _LoginScreenState extends State<LoginScreen> {
         ),
       ),
     );
+  }
+
+  void validateThenDoLogin() {
+    if (context.read<LoginCubit>().formKey.currentState!.validate()) {
+      context.read<LoginCubit>().emitLoginStates(
+        LoginRequestBody(
+          email: context.read<LoginCubit>().emailController.text,
+          password: context.read<LoginCubit>().passwordController.text,
+        ),
+      );
+    }
   }
 }

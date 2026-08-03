@@ -1,3 +1,5 @@
+// ignore_for_file: constant_identifier_names, non_constant_identifier_names
+
 import 'package:dio/dio.dart';
 import 'package:doctor_app/core/networking/api_constans.dart';
 
@@ -5,9 +7,7 @@ import 'api_error_model.dart';
 
 // TODO: wallahy I will refactor this .. Omar Ahmed
 enum DataSource {
-  // ignore: constant_identifier_names
   NO_CONTENT,
-  // ignore: constant_identifier_names
   BAD_REQUEST,
   FORBIDDEN,
   UNAUTORISED,
