@@ -11,14 +11,9 @@ import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 
-class LoginScreen extends StatefulWidget {
+class LoginScreen extends StatelessWidget {
   const LoginScreen({super.key});
 
-  @override
-  State<LoginScreen> createState() => _LoginScreenState();
-}
-
-class _LoginScreenState extends State<LoginScreen> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -52,7 +47,7 @@ class _LoginScreenState extends State<LoginScreen> {
                       buttonText: 'Login',
                       textStyle: TextStyles.font16WhiteSemiBold,
                       onPressed: () {
-                        validateThenDoLogin();
+                        validateThenDoLogin(context);
                       },
                     ),
                     verticalSpace(16),
@@ -69,7 +64,7 @@ class _LoginScreenState extends State<LoginScreen> {
     );
   }
 
-  void validateThenDoLogin() {
+  void validateThenDoLogin(BuildContext context) {
     if (context.read<LoginCubit>().formKey.currentState!.validate()) {
       context.read<LoginCubit>().emitLoginStates(
         LoginRequestBody(

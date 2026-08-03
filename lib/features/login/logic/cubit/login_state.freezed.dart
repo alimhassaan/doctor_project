@@ -61,13 +61,13 @@ extension LoginStatePatterns<T> on LoginState<T> {
 /// }
 /// ```
 
-@optionalTypeArgs TResult maybeMap<TResult extends Object?>({TResult Function( _Initial<T> value)?  initial,TResult Function( _Loading<T> value)?  loading,TResult Function( _Success<T> value)?  success,TResult Function( _Error<T> value)?  error,required TResult orElse(),}){
+@optionalTypeArgs TResult maybeMap<TResult extends Object?>({TResult Function( Initial<T> value)?  initial,TResult Function( Loading<T> value)?  loading,TResult Function( Success<T> value)?  success,TResult Function( Error<T> value)?  error,required TResult orElse(),}){
 final _that = this;
 switch (_that) {
-case _Initial() when initial != null:
-return initial(_that);case _Loading() when loading != null:
-return loading(_that);case _Success() when success != null:
-return success(_that);case _Error() when error != null:
+case Initial() when initial != null:
+return initial(_that);case Loading() when loading != null:
+return loading(_that);case Success() when success != null:
+return success(_that);case Error() when error != null:
 return error(_that);case _:
   return orElse();
 
@@ -86,13 +86,13 @@ return error(_that);case _:
 /// }
 /// ```
 
-@optionalTypeArgs TResult map<TResult extends Object?>({required TResult Function( _Initial<T> value)  initial,required TResult Function( _Loading<T> value)  loading,required TResult Function( _Success<T> value)  success,required TResult Function( _Error<T> value)  error,}){
+@optionalTypeArgs TResult map<TResult extends Object?>({required TResult Function( Initial<T> value)  initial,required TResult Function( Loading<T> value)  loading,required TResult Function( Success<T> value)  success,required TResult Function( Error<T> value)  error,}){
 final _that = this;
 switch (_that) {
-case _Initial():
-return initial(_that);case _Loading():
-return loading(_that);case _Success():
-return success(_that);case _Error():
+case Initial():
+return initial(_that);case Loading():
+return loading(_that);case Success():
+return success(_that);case Error():
 return error(_that);case _:
   throw StateError('Unexpected subclass');
 
@@ -110,13 +110,13 @@ return error(_that);case _:
 /// }
 /// ```
 
-@optionalTypeArgs TResult? mapOrNull<TResult extends Object?>({TResult? Function( _Initial<T> value)?  initial,TResult? Function( _Loading<T> value)?  loading,TResult? Function( _Success<T> value)?  success,TResult? Function( _Error<T> value)?  error,}){
+@optionalTypeArgs TResult? mapOrNull<TResult extends Object?>({TResult? Function( Initial<T> value)?  initial,TResult? Function( Loading<T> value)?  loading,TResult? Function( Success<T> value)?  success,TResult? Function( Error<T> value)?  error,}){
 final _that = this;
 switch (_that) {
-case _Initial() when initial != null:
-return initial(_that);case _Loading() when loading != null:
-return loading(_that);case _Success() when success != null:
-return success(_that);case _Error() when error != null:
+case Initial() when initial != null:
+return initial(_that);case Loading() when loading != null:
+return loading(_that);case Success() when success != null:
+return success(_that);case Error() when error != null:
 return error(_that);case _:
   return null;
 
@@ -136,10 +136,10 @@ return error(_that);case _:
 
 @optionalTypeArgs TResult maybeWhen<TResult extends Object?>({TResult Function()?  initial,TResult Function()?  loading,TResult Function( T data)?  success,TResult Function( String error)?  error,required TResult orElse(),}) {final _that = this;
 switch (_that) {
-case _Initial() when initial != null:
-return initial();case _Loading() when loading != null:
-return loading();case _Success() when success != null:
-return success(_that.data);case _Error() when error != null:
+case Initial() when initial != null:
+return initial();case Loading() when loading != null:
+return loading();case Success() when success != null:
+return success(_that.data);case Error() when error != null:
 return error(_that.error);case _:
   return orElse();
 
@@ -160,10 +160,10 @@ return error(_that.error);case _:
 
 @optionalTypeArgs TResult when<TResult extends Object?>({required TResult Function()  initial,required TResult Function()  loading,required TResult Function( T data)  success,required TResult Function( String error)  error,}) {final _that = this;
 switch (_that) {
-case _Initial():
-return initial();case _Loading():
-return loading();case _Success():
-return success(_that.data);case _Error():
+case Initial():
+return initial();case Loading():
+return loading();case Success():
+return success(_that.data);case Error():
 return error(_that.error);case _:
   throw StateError('Unexpected subclass');
 
@@ -183,10 +183,10 @@ return error(_that.error);case _:
 
 @optionalTypeArgs TResult? whenOrNull<TResult extends Object?>({TResult? Function()?  initial,TResult? Function()?  loading,TResult? Function( T data)?  success,TResult? Function( String error)?  error,}) {final _that = this;
 switch (_that) {
-case _Initial() when initial != null:
-return initial();case _Loading() when loading != null:
-return loading();case _Success() when success != null:
-return success(_that.data);case _Error() when error != null:
+case Initial() when initial != null:
+return initial();case Loading() when loading != null:
+return loading();case Success() when success != null:
+return success(_that.data);case Error() when error != null:
 return error(_that.error);case _:
   return null;
 
@@ -198,8 +198,8 @@ return error(_that.error);case _:
 /// @nodoc
 
 
-class _Initial<T> with DiagnosticableTreeMixin implements LoginState<T> {
-  const _Initial();
+class Initial<T> with DiagnosticableTreeMixin implements LoginState<T> {
+  const Initial();
   
 
 
@@ -215,7 +215,7 @@ void debugFillProperties(DiagnosticPropertiesBuilder properties) {
 
 @override
 bool operator ==(Object other) {
-  return identical(this, other) || (other.runtimeType == runtimeType&&other is _Initial<T>);
+  return identical(this, other) || (other.runtimeType == runtimeType&&other is Initial<T>);
 }
 
 
@@ -236,8 +236,8 @@ String toString({ DiagnosticLevel minLevel = DiagnosticLevel.info }) {
 /// @nodoc
 
 
-class _Loading<T> with DiagnosticableTreeMixin implements LoginState<T> {
-  const _Loading();
+class Loading<T> with DiagnosticableTreeMixin implements LoginState<T> {
+  const Loading();
   
 
 
@@ -253,7 +253,7 @@ void debugFillProperties(DiagnosticPropertiesBuilder properties) {
 
 @override
 bool operator ==(Object other) {
-  return identical(this, other) || (other.runtimeType == runtimeType&&other is _Loading<T>);
+  return identical(this, other) || (other.runtimeType == runtimeType&&other is Loading<T>);
 }
 
 
@@ -274,8 +274,8 @@ String toString({ DiagnosticLevel minLevel = DiagnosticLevel.info }) {
 /// @nodoc
 
 
-class _Success<T> with DiagnosticableTreeMixin implements LoginState<T> {
-  const _Success(this.data);
+class Success<T> with DiagnosticableTreeMixin implements LoginState<T> {
+  const Success(this.data);
   
 
  final  T data;
@@ -284,7 +284,7 @@ class _Success<T> with DiagnosticableTreeMixin implements LoginState<T> {
 /// with the given fields replaced by the non-null parameter values.
 @JsonKey(includeFromJson: false, includeToJson: false)
 @pragma('vm:prefer-inline')
-_$SuccessCopyWith<T, _Success<T>> get copyWith => __$SuccessCopyWithImpl<T, _Success<T>>(this, _$identity);
+$SuccessCopyWith<T, Success<T>> get copyWith => _$SuccessCopyWithImpl<T, Success<T>>(this, _$identity);
 
 
 @override
@@ -296,7 +296,7 @@ void debugFillProperties(DiagnosticPropertiesBuilder properties) {
 
 @override
 bool operator ==(Object other) {
-  return identical(this, other) || (other.runtimeType == runtimeType&&other is _Success<T>&&const DeepCollectionEquality().equals(other.data, data));
+  return identical(this, other) || (other.runtimeType == runtimeType&&other is Success<T>&&const DeepCollectionEquality().equals(other.data, data));
 }
 
 
@@ -312,8 +312,8 @@ String toString({ DiagnosticLevel minLevel = DiagnosticLevel.info }) {
 }
 
 /// @nodoc
-abstract mixin class _$SuccessCopyWith<T,$Res> implements $LoginStateCopyWith<T, $Res> {
-  factory _$SuccessCopyWith(_Success<T> value, $Res Function(_Success<T>) _then) = __$SuccessCopyWithImpl;
+abstract mixin class $SuccessCopyWith<T,$Res> implements $LoginStateCopyWith<T, $Res> {
+  factory $SuccessCopyWith(Success<T> value, $Res Function(Success<T>) _then) = _$SuccessCopyWithImpl;
 @useResult
 $Res call({
  T data
@@ -324,17 +324,17 @@ $Res call({
 
 }
 /// @nodoc
-class __$SuccessCopyWithImpl<T,$Res>
-    implements _$SuccessCopyWith<T, $Res> {
-  __$SuccessCopyWithImpl(this._self, this._then);
+class _$SuccessCopyWithImpl<T,$Res>
+    implements $SuccessCopyWith<T, $Res> {
+  _$SuccessCopyWithImpl(this._self, this._then);
 
-  final _Success<T> _self;
-  final $Res Function(_Success<T>) _then;
+  final Success<T> _self;
+  final $Res Function(Success<T>) _then;
 
 /// Create a copy of LoginState
 /// with the given fields replaced by the non-null parameter values.
 @pragma('vm:prefer-inline') $Res call({Object? data = freezed,}) {
-  return _then(_Success<T>(
+  return _then(Success<T>(
 freezed == data ? _self.data : data // ignore: cast_nullable_to_non_nullable
 as T,
   ));
@@ -346,8 +346,8 @@ as T,
 /// @nodoc
 
 
-class _Error<T> with DiagnosticableTreeMixin implements LoginState<T> {
-  const _Error({required this.error});
+class Error<T> with DiagnosticableTreeMixin implements LoginState<T> {
+  const Error({required this.error});
   
 
  final  String error;
@@ -356,7 +356,7 @@ class _Error<T> with DiagnosticableTreeMixin implements LoginState<T> {
 /// with the given fields replaced by the non-null parameter values.
 @JsonKey(includeFromJson: false, includeToJson: false)
 @pragma('vm:prefer-inline')
-_$ErrorCopyWith<T, _Error<T>> get copyWith => __$ErrorCopyWithImpl<T, _Error<T>>(this, _$identity);
+$ErrorCopyWith<T, Error<T>> get copyWith => _$ErrorCopyWithImpl<T, Error<T>>(this, _$identity);
 
 
 @override
@@ -368,7 +368,7 @@ void debugFillProperties(DiagnosticPropertiesBuilder properties) {
 
 @override
 bool operator ==(Object other) {
-  return identical(this, other) || (other.runtimeType == runtimeType&&other is _Error<T>&&(identical(other.error, error) || other.error == error));
+  return identical(this, other) || (other.runtimeType == runtimeType&&other is Error<T>&&(identical(other.error, error) || other.error == error));
 }
 
 
@@ -384,8 +384,8 @@ String toString({ DiagnosticLevel minLevel = DiagnosticLevel.info }) {
 }
 
 /// @nodoc
-abstract mixin class _$ErrorCopyWith<T,$Res> implements $LoginStateCopyWith<T, $Res> {
-  factory _$ErrorCopyWith(_Error<T> value, $Res Function(_Error<T>) _then) = __$ErrorCopyWithImpl;
+abstract mixin class $ErrorCopyWith<T,$Res> implements $LoginStateCopyWith<T, $Res> {
+  factory $ErrorCopyWith(Error<T> value, $Res Function(Error<T>) _then) = _$ErrorCopyWithImpl;
 @useResult
 $Res call({
  String error
@@ -396,17 +396,17 @@ $Res call({
 
 }
 /// @nodoc
-class __$ErrorCopyWithImpl<T,$Res>
-    implements _$ErrorCopyWith<T, $Res> {
-  __$ErrorCopyWithImpl(this._self, this._then);
+class _$ErrorCopyWithImpl<T,$Res>
+    implements $ErrorCopyWith<T, $Res> {
+  _$ErrorCopyWithImpl(this._self, this._then);
 
-  final _Error<T> _self;
-  final $Res Function(_Error<T>) _then;
+  final Error<T> _self;
+  final $Res Function(Error<T>) _then;
 
 /// Create a copy of LoginState
 /// with the given fields replaced by the non-null parameter values.
 @pragma('vm:prefer-inline') $Res call({Object? error = null,}) {
-  return _then(_Error<T>(
+  return _then(Error<T>(
 error: null == error ? _self.error : error // ignore: cast_nullable_to_non_nullable
 as String,
   ));

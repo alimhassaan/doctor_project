@@ -1,6 +1,8 @@
+import 'package:doctor_app/core/helpers/app_regex.dart';
 import 'package:doctor_app/core/helpers/spacing.dart';
 import 'package:doctor_app/core/widgets/app_text_form_field.dart';
 import 'package:doctor_app/features/login/logic/cubit/login_cubit.dart';
+import 'package:doctor_app/features/login/ui/widgets/email_and_password.dart' as passwordController;
 import 'package:doctor_app/features/login/ui/widgets/password_validation.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
@@ -24,7 +26,20 @@ class _EmailAndPasswordState extends State<EmailAndPassword> {
   void initState() {
     super.initState();
     passwordController = context.read<LoginCubit>().passwordController;
+    setupPasswordControllerListener();
   }
+  void setupPasswordControllerListener() {
+    passwordController.addListener(() {
+      setState(() {
+        hasLowerCase = AppRegex.hasLowerCase(passwordController.text);
+        hasUpperCase = AppRegex.hasUpperCase(passwordController.text);
+        hasSpecialCharacters = AppRegex.hasSpecialCharacter(passwordController.text);
+        hasNumbers = AppRegex.hasNumber(passwordController.text);
+        hasMinLength = AppRegex.hasMinLength(passwordController.text);
+      });
+    });
+  }
+
 
   @override
   Widget build(BuildContext context) {
@@ -35,8 +50,8 @@ class _EmailAndPasswordState extends State<EmailAndPassword> {
           AppTextFormField(
             hintText: 'Email',
             validator: (value) {
-              if (value == null || value.isEmpty) {
-                return 'Please enter your email';
+              if (value == null || value.isEmpty || !AppRegex.isEmailValid(value)) {
+                return 'Please enter a valid email';
               }
               return null;
             },
@@ -75,5 +90,11 @@ class _EmailAndPasswordState extends State<EmailAndPassword> {
         ],
       ),
     );
+  }
+  
+  @override
+  void dispose() {
+    passwordController.dispose();
+    super.dispose();
   }
 }

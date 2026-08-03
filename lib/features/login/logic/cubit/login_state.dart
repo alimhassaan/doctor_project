@@ -5,8 +5,8 @@ part 'login_state.freezed.dart';
 
 @Freezed()
 abstract class LoginState<T> with _$LoginState<T> {
-  const factory LoginState.initial() = _Initial<T>;
-  const factory LoginState.loading() = _Loading<T>;
-  const factory LoginState.success(T data) = _Success<T>;
-  const factory LoginState.error({required String error}) = _Error<T>;
+  const factory LoginState.initial() = Initial<T>;
+  const factory LoginState.loading() = Loading<T>;
+  const factory LoginState.success(T data) = Success<T>;
+  const factory LoginState.error({required String error}) = Error<T>;
 }
