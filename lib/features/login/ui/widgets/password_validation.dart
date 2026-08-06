@@ -1,6 +1,6 @@
-import 'package:doctor_app/core/helpers/spacing.dart';
-import 'package:doctor_app/core/theming/colors.dart';
-import 'package:doctor_app/core/theming/styles.dart';
+import '../../../../core/helpers/spacing.dart';
+import '../../../../core/theming/colors.dart';
+import '../../../../core/theming/styles.dart';
 import 'package:flutter/material.dart';
 
 class PasswordValidation extends StatelessWidget {

@@ -1,10 +1,10 @@
-import 'package:doctor_app/core/di/dependency_injection.dart';
-import 'package:doctor_app/features/home/ui/home_screen.dart';
-import 'package:doctor_app/features/login/logic/cubit/login_cubit.dart';
-import 'package:doctor_app/features/login/ui/login_screen.dart';
+import '../di/dependency_injection.dart';
+import '../../features/home/ui/home_screen.dart';
+import '../../features/login/logic/cubit/login_cubit.dart';
+import '../../features/login/ui/login_screen.dart';
 import 'package:flutter/material.dart';
-import 'package:doctor_app/core/routing/routes.dart';
-import 'package:doctor_app/features/onboarding/onboarding_screen.dart';
+import 'routes.dart';
+import '../../features/onboarding/onboarding_screen.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 
 class AppRouter {

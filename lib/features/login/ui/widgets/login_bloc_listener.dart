@@ -1,9 +1,9 @@
-import 'package:doctor_app/core/helpers/extensions.dart';
-import 'package:doctor_app/core/networking/api_result.dart';
-import 'package:doctor_app/core/routing/routes.dart';
-import 'package:doctor_app/core/theming/colors.dart';
-import 'package:doctor_app/core/theming/styles.dart';
-import 'package:doctor_app/features/login/logic/cubit/login_cubit.dart';
+import '../../../../core/helpers/extensions.dart';
+import '../../../../core/networking/api_result.dart';
+import '../../../../core/routing/routes.dart';
+import '../../../../core/theming/colors.dart';
+import '../../../../core/theming/styles.dart';
+import '../../logic/cubit/login_cubit.dart';
 import 'package:doctor_app/features/login/logic/cubit/login_state.dart'
     hide Success;
 import 'package:flutter/material.dart';

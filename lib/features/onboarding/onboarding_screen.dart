@@ -1,9 +1,9 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
-import 'package:doctor_app/core/theming/styles.dart';
-import 'package:doctor_app/features/onboarding/doc_logo_and_name.dart';
-import 'package:doctor_app/features/onboarding/widgets/doctor_image_and_text.dart';
-import 'package:doctor_app/features/onboarding/widgets/get_started_buttom.dart';
+import '../../core/theming/styles.dart';
+import 'doc_logo_and_name.dart';
+import 'widgets/doctor_image_and_text.dart';
+import 'widgets/get_started_buttom.dart';
 
 class OnboardingScreen extends StatelessWidget {
   const OnboardingScreen({super.key});
