@@ -1,7 +1,7 @@
 import 'package:freezed_annotation/freezed_annotation.dart';
 part 'signup_request_body.g.dart';
 
-@JsonSerializable()
+@JsonSerializable(createFactory: false)
 class SignupRequestBody {
   final String name;
   final String email;
