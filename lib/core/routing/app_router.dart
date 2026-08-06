@@ -1,3 +1,6 @@
+
+import 'package:doctor_app/features/signup/ui/signup_screen.dart';
+
 import '../di/dependency_injection.dart';
 import '../../features/home/ui/home_screen.dart';
 import '../../features/login/logic/cubit/login_cubit.dart';
@@ -21,6 +24,8 @@ class AppRouter {
             child: LoginScreen(),
           ),
         );
+      case Routes.signUpScreen:
+        return MaterialPageRoute(builder: (_) => SignupScreen());  
       default:
         return MaterialPageRoute(
           builder: (_) => Scaffold(
