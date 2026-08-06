@@ -1,13 +1,11 @@
-import '../../../../core/helpers/extensions.dart';
-import '../../../../core/networking/api_result.dart';
+import 'package:doctor_app/core/helpers/extensions.dart';
+import 'package:doctor_app/features/login/logic/cubit/login_cubit.dart';
+import 'package:doctor_app/features/login/logic/cubit/login_state.dart';
+import 'package:flutter/material.dart';
+import 'package:flutter_bloc/flutter_bloc.dart';
 import '../../../../core/routing/routes.dart';
 import '../../../../core/theming/colors.dart';
 import '../../../../core/theming/styles.dart';
-import '../../logic/cubit/login_cubit.dart';
-import 'package:doctor_app/features/login/logic/cubit/login_state.dart'
-    hide Success;
-import 'package:flutter/material.dart';
-import 'package:flutter_bloc/flutter_bloc.dart';
 
 class LoginBlocListener extends StatelessWidget {
   const LoginBlocListener({super.key});
@@ -23,7 +21,9 @@ class LoginBlocListener extends StatelessWidget {
             showDialog(
               context: context,
               builder: (context) => const Center(
-                child: CircularProgressIndicator(color: ColorsManager.mainBlue),
+                child: CircularProgressIndicator(
+                  color: ColorsManager.mainBlue,
+                ),
               ),
             );
           },
@@ -33,33 +33,39 @@ class LoginBlocListener extends StatelessWidget {
           },
           error: (error) {
             setupErrorState(context, error);
-            },
+          },
         );
       },
-      child: SizedBox.shrink(),
+      child: const SizedBox.shrink(),
     );
   }
-}
 
-void setupErrorState(BuildContext context,String error) {
-  context.pop();
-  showDialog(
-    context: context,
-    builder: (context) => AlertDialog(
-      icon: Icon(Icons.error, color: Colors.red,size: 32,),
-      content: Text(
-        error,
-        style: TextStyles.font15DarkBlurMedium,
-      ),
-      actions: [
-        TextButton(
-          onPressed: () => context.pop(),
-          child: Text(
-            'Got it',
-            style: TextStyles.font14BlueSemiBold,
-          ),
+  void setupErrorState(BuildContext context, String error) {
+    context.pop();
+    showDialog(
+      context: context,
+      builder: (context) => AlertDialog(
+        icon: const Icon(
+          Icons.error,
+          color: Colors.red,
+          size: 32,
         ),
-      ],
-    ),
-  );
+        content: Text(
+          error,
+          style: TextStyles.font15DarkBlueMedium,
+        ),
+        actions: [
+          TextButton(
+            onPressed: () {
+              context.pop();
+            },
+            child: Text(
+              'Got it',
+              style: TextStyles.font14BlueSemiBold,
+            ),
+          ),
+        ],
+      ),
+    );
+  }
 }
