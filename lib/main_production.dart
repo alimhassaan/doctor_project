@@ -8,7 +8,6 @@ import 'doc_app.dart';
 void main() async {
   setupGetIt();
 
-  // To fix font bug in flutter_screenutil in release mode
 
   //? To fix font bug in flutter_screenutil in release mode
   await ScreenUtil.ensureScreenSize();
