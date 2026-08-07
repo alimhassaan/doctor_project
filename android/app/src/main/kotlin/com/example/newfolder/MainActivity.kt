@@ -1,5 +1,5 @@
-package com.example.newfolder
+package com.example.doctor_app 
 
-import io.flutter.embedding.android.FlutterActivity
+import io.flutter.embedding.android.FlutterActivity 
 
 class MainActivity : FlutterActivity()
