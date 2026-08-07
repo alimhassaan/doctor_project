@@ -1,4 +1,4 @@
-```kotlin
+
 plugins {
     id("com.android.application")
     // The Flutter Gradle Plugin must be applied after the Android and Kotlin Gradle plugins.
@@ -54,4 +54,4 @@ kotlin {
 flutter {
     source = "../.."
 }
-```
+
