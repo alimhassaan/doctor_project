@@ -5,7 +5,7 @@ plugins {
 }
 
 android {
-    namespace = "com.example.newfolder"
+    namespace = "com.example.doctor_app"
     compileSdk = flutter.compileSdkVersion
     ndkVersion = flutter.ndkVersion
 
