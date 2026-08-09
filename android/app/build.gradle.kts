@@ -36,7 +36,6 @@ android {
 
         create("development") {
             dimension = "default"
-            applicationIdSuffix = ".dev"
             resValue("string", "app_name", "DocDoc Development")
         }
     }
