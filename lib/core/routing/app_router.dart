@@ -1,4 +1,4 @@
-
+import 'package:doctor_app/features/home/logic/home_cubit.dart';
 import 'package:doctor_app/features/signup/logic/signup_cubit.dart';
 import 'package:doctor_app/features/signup/ui/signup_screen.dart';
 
@@ -12,12 +12,11 @@ import '../../features/onboarding/onboarding_screen.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 
 class AppRouter {
-  Route generateRoute(RouteSettings setting) {
+  Route? generateRoute(RouteSettings setting) {
     switch (setting.name) {
       case Routes.onBoardingScreen:
         return MaterialPageRoute(builder: (_) => OnboardingScreen());
-      case Routes.homeScreen:
-        return MaterialPageRoute(builder: (_) => HomeScreen());
+   
       case Routes.loginScreen:
         return MaterialPageRoute(
           builder: (_) => BlocProvider(
@@ -32,13 +31,16 @@ class AppRouter {
             child: SignupScreen(),
           ),
         );
-      
-      default:
+           case Routes.homeScreen:
         return MaterialPageRoute(
-          builder: (_) => Scaffold(
-            body: Center(child: Text("No route defined for ${setting.name}")),
+          builder: (_) => BlocProvider(
+            create: (context) => HomeCubit(getIt())..getSpecialization(),
+            child: HomeScreen(),
           ),
         );
+
+      default:
+        return null;
     }
   }
 }
