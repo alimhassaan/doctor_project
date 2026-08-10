@@ -1,7 +1,7 @@
 import 'package:json_annotation/json_annotation.dart';
 part 'login_response.g.dart';
 
-@JsonSerializable()
+@JsonSerializable(createToJson: false)
 class LoginResponse {
   String? message;
   @JsonKey(name: 'data')
@@ -15,7 +15,7 @@ class LoginResponse {
       _$LoginResponseFromJson(json);
 }
 
-@JsonSerializable()
+@JsonSerializable(createToJson: false)
 class UserData {
   String? token;
   @JsonKey(name: 'username')

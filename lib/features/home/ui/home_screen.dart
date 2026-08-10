@@ -50,14 +50,22 @@ class HomeScreen extends StatelessWidget {
                                   ?.whereType<SpecializationsData>()
                                   .toList() ??
                               const <SpecializationsData>[];
+                      final doctorsList = specializationsList.isNotEmpty
+                          ? specializationsList.first.doctorsList
+                                 ?.whereType<Doctors>()
+                                 .toList() ??
+                             const <Doctors>[]
+                          : const <Doctors>[];
                       return Expanded(
                         child: Column(
                           children: [
                             DoctorsSpecialityListView(
-                              specializationsDataList: specializationsList,
+                             specializationsDataList: specializationsList,
                             ),
                             verticalSpace(8.h),
-                            const DoctorsListView(),
+                            DoctorsListView(
+                             doctorList: doctorsList,
+                            ),
                           ],
                         ),
                       );
