@@ -1,5 +1,5 @@
-import 'package:doctor_app/core/theming/colors.dart';
-import 'package:doctor_app/core/theming/styles.dart';
+import '../../../../core/theming/colors.dart';
+import '../../../../core/theming/styles.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/flutter_svg.dart';
 

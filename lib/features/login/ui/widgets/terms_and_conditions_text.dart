@@ -1,5 +1,6 @@
-import '../../../../core/theming/styles.dart';
 import 'package:flutter/material.dart';
+
+import '../../../../core/theming/styles.dart';
 
 
 class TermsAndConditionsText extends StatelessWidget {

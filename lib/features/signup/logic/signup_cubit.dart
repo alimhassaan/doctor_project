@@ -1,7 +1,7 @@
-import 'package:doctor_app/core/networking/api_result.dart';
-import 'package:doctor_app/features/signup/data/models/signup_request_body.dart';
-import 'package:doctor_app/features/signup/data/repos/signup_repo.dart';
-import 'package:doctor_app/features/signup/logic/signup_state.dart';
+import '../../../core/networking/api_result.dart';
+import '../data/models/signup_request_body.dart';
+import '../data/repos/signup_repo.dart';
+import 'signup_state.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 

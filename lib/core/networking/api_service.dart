@@ -1,6 +1,6 @@
 import 'package:dio/dio.dart';
-import 'package:doctor_app/features/signup/data/models/signup_request_body.dart';
-import 'package:doctor_app/features/signup/data/models/signup_response.dart';
+import '../../features/signup/data/models/signup_request_body.dart';
+import '../../features/signup/data/models/signup_response.dart';
 import 'api_constans.dart';
 import '../../features/login/data/models/login_request_body.dart';
 import '../../features/login/data/models/login_response.dart';

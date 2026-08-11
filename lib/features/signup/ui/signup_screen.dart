@@ -1,9 +1,9 @@
-import 'package:doctor_app/features/login/ui/widgets/app_text_buttom.dart';
-import 'package:doctor_app/features/login/ui/widgets/terms_and_conditions_text.dart';
-import 'package:doctor_app/features/signup/ui/widgets/already_have_account_text.dart';
-import 'package:doctor_app/features/signup/logic/signup_cubit.dart';
-import 'package:doctor_app/features/signup/ui/widgets/signup_bloc_listener.dart';
-import 'package:doctor_app/features/signup/ui/widgets/signup_form.dart';
+import '../../login/ui/widgets/app_text_buttom.dart';
+import '../../login/ui/widgets/terms_and_conditions_text.dart';
+import 'widgets/already_have_account_text.dart';
+import '../logic/signup_cubit.dart';
+import 'widgets/signup_bloc_listener.dart';
+import 'widgets/signup_form.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';

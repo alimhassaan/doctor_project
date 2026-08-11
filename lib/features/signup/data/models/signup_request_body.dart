@@ -1,4 +1,5 @@
 import 'package:freezed_annotation/freezed_annotation.dart';
+
 part 'signup_request_body.g.dart';
 
 @JsonSerializable(createFactory: false)

@@ -1,6 +1,6 @@
-import 'package:doctor_app/core/helpers/extensions.dart';
-import 'package:doctor_app/features/login/logic/cubit/login_cubit.dart';
-import 'package:doctor_app/features/login/logic/cubit/login_state.dart';
+import '../../../../core/helpers/extensions.dart';
+import '../../logic/cubit/login_cubit.dart';
+import '../../logic/cubit/login_state.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import '../../../../core/routing/routes.dart';

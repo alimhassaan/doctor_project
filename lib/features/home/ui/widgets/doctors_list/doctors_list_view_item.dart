@@ -1,6 +1,6 @@
-import 'package:doctor_app/core/helpers/spacing.dart';
-import 'package:doctor_app/core/theming/styles.dart';
-import 'package:doctor_app/features/home/data/models/specializations_response_model.dart';
+import '../../../../../core/helpers/spacing.dart';
+import '../../../../../core/theming/styles.dart';
+import '../../../data/models/specializations_response_model.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 

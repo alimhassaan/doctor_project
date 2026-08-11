@@ -1,7 +1,8 @@
-import 'font_weight_helper.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
+
 import 'colors.dart';
+import 'font_weight_helper.dart';
 
 class TextStyles {
   static TextStyle font24BlackBold = TextStyle(
@@ -118,6 +119,11 @@ class TextStyles {
     fontSize: 12.sp,
     fontWeight: FontWeightHelper.medium,
     color: ColorsManager.gray,
+  );
+    static TextStyle font14DarkBlurBold = TextStyle(
+    fontSize: 14.sp,
+    fontWeight: FontWeightHelper.bold,
+    color: ColorsManager.darkblue,
   );
   
 }

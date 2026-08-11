@@ -1,5 +1,5 @@
-import 'package:doctor_app/core/helpers/extensions.dart';
-import 'package:doctor_app/core/routing/routes.dart';
+import '../../../../core/helpers/extensions.dart';
+import '../../../../core/routing/routes.dart';
 import 'package:flutter/gestures.dart';
 import 'package:flutter/material.dart';
 

@@ -1,6 +1,6 @@
-import 'package:doctor_app/core/helpers/extensions.dart';
-import 'package:doctor_app/features/signup/logic/signup_cubit.dart';
-import 'package:doctor_app/features/signup/logic/signup_state.dart';
+import '../../../../core/helpers/extensions.dart';
+import '../../logic/signup_cubit.dart';
+import '../../logic/signup_state.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 

@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
+
 import '../../core/theming/styles.dart';
 import 'doc_logo_and_name.dart';
 import 'widgets/doctor_image_and_text.dart';
