@@ -1,8 +1,8 @@
+import 'package:doctor_app/features/home/ui/widgets/doctors_list/doctors_shimmer_loading.dart';
 import 'package:doctor_app/features/home/ui/widgets/specializations_list/speciality_list_view.dart';
 
 import '../../../logic/home_cubit.dart';
 import '../../../logic/home_state.dart';
-import '../doctors_shimmer_loading.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 
